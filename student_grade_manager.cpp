@@ -5,8 +5,8 @@ using namespace std;
 This small project allows user to 
 store students and their grades; calculate
 the average grade and find the highest or
-lowest onr. All results are displayed to user
-through a simple menu system 
+lowest one. All results are displayed 
+through a simple menu. 
 */
 
 #define title_height 5
@@ -39,33 +39,38 @@ int main() {
     cout<<"Enter the number of students: ";
     cin>>stud_number; 
 
-    //enter the student names
+    //student names
     string stud_names[stud_number],stud_name; 
-    int i;
-    for(i = 0; i < stud_number; i++){
-        cout<<"Enter the student name: ";
+
+    //student grades
+    float stud_grades[stud_number],stud_grade = 0;
+    int grade_counter = 0; 
+
+    for(int i = 0; i < stud_number; i++){
+        cout<<"Enter student name: ";
         cin>>stud_name; 
-        stud_names [i] = stud_name; 
+        stud_names[i] = stud_name; 
     }
 
-    //enter the student grades
-    int j;
-    int stud_grades[stud_number],stud_grade;
-    for(j = 0; j < stud_number; j++){
-        cout<<"Enter the student grade: ";
-        cin>>stud_grade; 
-        if(stud_grade > 0 && stud_grade < 100){
-            stud_grades [j] = stud_grade;
+    //enter grades
+    cout<<"Enter the student grades: "<<endl; 
+    for(int i = 0; i < 100; i++){
+       
+        cin>>stud_grade;
+
+        if(stud_grade <= 0 || stud_grade > 100){
+            cout<<"You entered the wrong grade value, try again: ";
         }
-        else{
-            cout<<"Enter the valid grade: ";
-            stud_grades [j] = stud_grade;
+        else if(0 < stud_grade && stud_grade <= 100){
+            stud_grades[grade_counter] = stud_grade;
+            grade_counter++;
         }
-         
+        if(grade_counter >= stud_number)
+            break;
     }
 
-    //print the student names and grades
-    cout<<stud_names[i]<<":"<<stud_grades[j]<<endl;
+    for(int i = 0; i < stud_number; i++)
+        cout<<stud_names[i]<<": "<<stud_grades[i]<<endl; 
 
 
 
