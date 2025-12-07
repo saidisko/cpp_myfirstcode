@@ -2,11 +2,10 @@
 using namespace std;
 
 /*
-This small project allows user to 
-store students and their grades; calculate
-the average grade and find the highest or
-lowest one. All results are displayed 
-through a simple menu. 
+This small project allows the user to store students 
+and their grades, calculate the average grade, and find the 
+highest or lowest one using the basics of C++. 
+All results are displayed through a simple menu.
 */
 
 #define title_height 5
