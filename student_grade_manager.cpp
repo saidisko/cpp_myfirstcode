@@ -74,7 +74,7 @@ for(int i = 0; i < 100; i++){
 }
 cout<<endl;
 
- //function call in loop
+ //function call 
  int function_return = grade_manager(no_stud,stud_names,stud_grades);
  while(function_return != 5){
     cout<<"Enter your choice again: "<<endl;
