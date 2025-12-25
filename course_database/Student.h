@@ -9,28 +9,25 @@ private:
     std::string name;
     std::string surname;
     float quiz_scores[SIZE_qz];
-    float hw_scores [SIZE_hw]; 
+    float hw_scores[SIZE_hw]; 
     float FINAL_Score; 
-    float weight; 
-    float quiz_grd; 
-    float hw_grd;
+    float quiz_weight;
+    float hw_weight;
+    float final_weight; 
    
+    
 public:
-    student(int ID, std::string name, std::string surname, float quiz_grd, float hw_grd, float final_exam, float weight);      
+    student(int ID, std::string name, std::string surname, float FINAL_Score, float quiz_weight, float hw_weight, float final_weight);      
     
     //setters
-    void setQuizScores(float quiz_grd);             //set quiz grade 
     void setID(int ID);                             //set student ID
-    void setHWScores(float hw_grd);                 //set homework grade
     void setFinalScore(float FINAL_Score);          //set final exam grade
 
     //getters
-    int getQuizScores()const;                       //get quiz grades
-    int setID()const;                               //get student ID
-    int getHWScores()const;                         //get homework grade
-    int getFinalScore()const;                       //get final exam grade
+    int getID()const;                               //get student ID
+    float getFinalScore()const;                       //get final exam grade
 
-    void overallCourseScore(int ID, float quiz_grd, float hw_grd, float FINAL_Score, float weight); //calculate overall score of a student
+    float overallCourseScore(int ID, float FINAL_Score, float quiz_weight, float hw_weight, float final_weight); //calculate overall score of a student
 };
-    
+                
 #endif
